@@ -1,0 +1,118 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:40:47 on Jun 06,2021
+# vlog -reportprogress 300 ./GameControl.sv 
+# -- Compiling module GameControl
+# -- Compiling module GameControl_testbench
+# 
+# Top level modules:
+# 	GameControl_testbench
+# End time: 23:40:47 on Jun 06,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work GameControl_testbench 
+# Start time: 23:40:48 on Jun 06,2021
+# Loading sv_std.std
+# Loading work.GameControl_testbench
+# Loading work.GameControl
+# ** Warning: (vsim-3017) ./GameControl.sv(103): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /GameControl_testbench/dut File: ./GameControl.sv
+# ** Warning: (vsim-3722) ./GameControl.sv(103): [TFMPC] - Missing connection for port 'debug'.
+# ** Error: (vsim-3664) No memory object found in '/GameControl_testbench'.
+# Error in macro ./runlab.do line 17
+# ** Error: (vsim-3664) No memory object found in '/GameControl_testbench'.
+# 
+#     while executing
+# "mem load -infile my_array.txt -format bin"
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:41:24 on Jun 06,2021
+# vlog -reportprogress 300 ./GameControl.sv 
+# -- Compiling module GameControl
+# -- Compiling module GameControl_testbench
+# 
+# Top level modules:
+# 	GameControl_testbench
+# End time: 23:41:24 on Jun 06,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:41:25 on Jun 06,2021, Elapsed time: 0:00:37
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work GameControl_testbench 
+# Start time: 23:41:25 on Jun 06,2021
+# Loading sv_std.std
+# Loading work.GameControl_testbench
+# Loading work.GameControl
+# ** Warning: (vsim-3017) ./GameControl.sv(103): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /GameControl_testbench/dut File: ./GameControl.sv
+# ** Warning: (vsim-3722) ./GameControl.sv(103): [TFMPC] - Missing connection for port 'debug'.
+# ** Error: Cannot open macro file: wave.do
+# Error in macro ./runlab.do line 23
+# Cannot open macro file: wave.do
+#     while executing
+# "do wave.do"
+add wave -position end  sim:/GameControl_testbench/square
+add wave -position end sim:/GameControl_testbench/dut/*
+add wave -position end sim:/GameControl_testbench/*
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Sliege/Documents/GitHub/371final_lab6/wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:42:16 on Jun 06,2021
+# vlog -reportprogress 300 ./GameControl.sv 
+# -- Compiling module GameControl
+# -- Compiling module GameControl_testbench
+# 
+# Top level modules:
+# 	GameControl_testbench
+# End time: 23:42:16 on Jun 06,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:42:17 on Jun 06,2021, Elapsed time: 0:00:52
+# Errors: 3, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work GameControl_testbench 
+# Start time: 23:42:17 on Jun 06,2021
+# Loading sv_std.std
+# Loading work.GameControl_testbench
+# Loading work.GameControl
+# ** Warning: (vsim-3017) ./GameControl.sv(103): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /GameControl_testbench/dut File: ./GameControl.sv
+# ** Warning: (vsim-3722) ./GameControl.sv(103): [TFMPC] - Missing connection for port 'debug'.
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./GameControl.sv(137)
+#    Time: 1150 ps  Iteration: 1  Instance: /GameControl_testbench
+# Break in Module GameControl_testbench at ./GameControl.sv line 137
+add wave -position 6  sim:/GameControl_testbench/dut/moveq
+add wave -position 7  sim:/GameControl_testbench/dut/moved
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Sliege/Documents/GitHub/371final_lab6/wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:44:23 on Jun 06,2021
+# vlog -reportprogress 300 ./GameControl.sv 
+# -- Compiling module GameControl
+# -- Compiling module GameControl_testbench
+# 
+# Top level modules:
+# 	GameControl_testbench
+# End time: 23:44:23 on Jun 06,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:44:25 on Jun 06,2021, Elapsed time: 0:02:08
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work GameControl_testbench 
+# Start time: 23:44:25 on Jun 06,2021
+# Loading sv_std.std
+# Loading work.GameControl_testbench
+# Loading work.GameControl
+# ** Warning: (vsim-3017) ./GameControl.sv(103): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /GameControl_testbench/dut File: ./GameControl.sv
+# ** Warning: (vsim-3722) ./GameControl.sv(103): [TFMPC] - Missing connection for port 'debug'.
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./GameControl.sv(137)
+#    Time: 1150 ps  Iteration: 1  Instance: /GameControl_testbench
+# Break in Module GameControl_testbench at ./GameControl.sv line 137
+# End time: 00:53:32 on Jun 07,2021, Elapsed time: 1:09:07
+# Errors: 0, Warnings: 2

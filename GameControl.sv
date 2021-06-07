@@ -27,6 +27,8 @@ module GameControl(
 	//Output logic
     assign purp_state = purpq;
     assign gold_state = goldq;
+    assign debug[0] = moveq == purp_move;
+    assign debug[1] = moveq == gold_move;
 
 	// Next State logic
 	always_comb begin

@@ -20,8 +20,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 
 	logic reset, game_reset;
     logic up, down, select, up1, down1, select1, start1;
-    logic game_finished, purple_win; 
-    logic [3:0] count;
+    logic game_finished, purple_win, gold_win; 
+    logic [3:0] count, purp_wins, gold_wins;
     logic [8:0] square, purp_state, gold_state;
 	logic [9:0] x;
 	logic [8:0] y;
@@ -49,6 +49,10 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	
     //Data Path
     Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
+
+	GeneralRegister purp_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_finished & purp_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(purp_wins));
+	GeneralRegister gold_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_finished & gold_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(gold_wins));
+
 	
     //Outputs
 	video_driver #(.WIDTH(640), .HEIGHT(480))
@@ -57,15 +61,16 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 
     HexDecDigit selecter (.digit(count), .hex(HEX5)); // HEX5
+    HexDecDigit purp_disp (.digit(count), .hex(HEX0)); // HEX0 PURPLE
+    HexDecDigit gold_disp (.digit(count), .hex(HEX1)); // HEX1 GOLD
+
 	
     assign LEDR[0] = game_finished;
     assign LEDR[1] = purple_win;
     assign LEDR[2] = gold_win;
 
-    assign LEDR[9] = up;
-    assign LEDR[8] = down;
-    assign LEDR[7] = select;
-    assign LEDR[6] = game_reset;
+    //assign LEDR[9:8] = debug; // Used to see whose move is next for debug
+
 
     assign HEX0 = '1;
 	assign HEX1 = '1;

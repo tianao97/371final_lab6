@@ -18,7 +18,7 @@ module n8_to_key (
 
     //Move finalization
     always @(posedge clk) begin
-        if(select) begin
+        if(select & ~lock) begin
             if(count == 1)      square <= 9'b000000001;
             else if(count == 2) square <= 9'b000000010;
             else if(count == 3) square <= 9'b000000100;
@@ -47,8 +47,47 @@ module n8_to_key (
     end
 
     always @(posedge clk) begin
-        if(up | down) lock <= 1;
-        else lock <= 0;
-            
+        if(up | down | select) lock <= 1;
+        else lock <= 0;    
     end
+endmodule
+
+module  n8_to_key_testbench();
+        logic clk, reset;
+        logic up, down, select;
+		logic [3:0] count;
+        logic [8:0] square;
+
+		n8_to_key dut (.clk, .reset, .up, .down, .select, .count, .square);
+		
+		parameter clock_period = 100;
+		
+		initial begin
+			clk <= 0;
+			forever #(clock_period /2) clk <= ~clk;
+			
+		end 
+		
+		initial begin
+        reset <= 0;                                                        @(posedge clk);
+        reset <= 1;                                                        @(posedge clk);
+        up <= 1;                                                        @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);																
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);															
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+			$stop;						
+		end
 endmodule
