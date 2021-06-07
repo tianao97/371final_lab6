@@ -61,8 +61,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 
     HexDecDigit selecter (.digit(count), .hex(HEX5)); // HEX5
-    HexDecDigit purp_disp (.digit(count), .hex(HEX0)); // HEX0 PURPLE
-    HexDecDigit gold_disp (.digit(count), .hex(HEX1)); // HEX1 GOLD
+    HexDecDigit purp_disp (.digit(purp_wins), .hex(HEX0)); // HEX0 PURPLE
+    HexDecDigit gold_disp (.digit(gold_wins), .hex(HEX1)); // HEX1 GOLD
 
 	
     assign LEDR[0] = game_finished;
@@ -72,8 +72,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     //assign LEDR[9:8] = debug; // Used to see whose move is next for debug
 
 
-    assign HEX0 = '1;
-	assign HEX1 = '1;
+    //assign HEX0 = '1;
+	//assign HEX1 = '1;
 	assign HEX2 = '1;
 	assign HEX3 = '1;
 	assign HEX4 = '1;

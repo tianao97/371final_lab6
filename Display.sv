@@ -19,9 +19,9 @@ module Display(
     always_ff @(posedge clk) begin
         // Square 1
         if ((x > 0 & x < 213 & y > 0 & y < 160) & gold[0])
-            {r, g, b} <= 24'hB8860B; // gold
+            {r, g, b} <= ~24'hB8860B; // gold
         else if((x > 0 & x < 213 & y > 0 & y < 160) & purp[0])
-            {r, g, b} <= 24'h800080;// purple
+            {r, g, b} <= ~24'h800080;// purple
         else if((x > 0 & x < 213 & y > 0 & y < 160) & !gold[1] & !purp[1])
             {r, g, b} <= 24'h000000;// default black
         // Square 2
