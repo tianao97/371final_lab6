@@ -55,7 +55,7 @@ endmodule
 module  n8_to_key_testbench();
         logic clk, reset;
         logic up, down, select;
-		  logic [3:0] count;
+		logic [3:0] count;
         logic [8:0] square;
 
 		n8_to_key dut (.clk, .reset, .up, .down, .select, .count, .square);
@@ -69,32 +69,25 @@ module  n8_to_key_testbench();
 		end 
 		
 		initial begin
-        reset <= 1;                                            @(posedge clk);
-        reset <= 0;                                            @(posedge clk);
-        up <= 1;                                               @(posedge clk);
-        up <= 1; 																@(posedge clk);
-        up <= 0;                                      			@(posedge clk);
-        select <=1;                                            @(posedge clk);
-        select <=0;                                            @(posedge clk);
-        up <= 1;                                               @(posedge clk);
-        up <= 1;                                               @(posedge clk);
-        up <= 1;                                               @(posedge clk);
-		  up <= 0;                                      			@(posedge clk);
-        select <=1;                                            @(posedge clk);
-        select <=0;                                            @(posedge clk);
-        up <= 1;                                               @(posedge clk);																
-        up <= 1;                                               @(posedge clk);
-        up <= 1;                                               @(posedge clk);
-        up <= 1; 																@(posedge clk);
-		  up <= 1;																@(posedge clk);
-																					@(posedge clk);
-        up <= 1;		  														@(posedge clk);
-		  up <= 0;                                      			@(posedge clk);
-        down <= 1;                                             @(posedge clk);
-        down <= 1;                                             @(posedge clk);
-        down <= 1;                                             @(posedge clk);		  
-																					@(posedge clk);
-                                                               @(posedge clk);
+        reset <= 0;                                                        @(posedge clk);
+        reset <= 1;                                                        @(posedge clk);
+        up <= 1;                                                        @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);																
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);
+                                                                @(posedge clk);															
+                                                                @(posedge clk);
+                                                                @(posedge clk);
 			$stop;						
 		end
 endmodule

@@ -7,7 +7,7 @@ module GameControl(
 	input logic clk, reset,
 	input logic game_finished, //game_finished: win has been achieve, when high will lock the game 
  
-   input logic [8:0] square, //Square: Input pattern for the game. Defines the key pressed for the current player.
+    input logic [8:0] square, //Square: Input pattern for the game. Defines the key pressed for the current player.
 
 	output logic [8:0] purp_state, gold_state,
     //purp_state: current pattern of purple squares on the game board
@@ -127,15 +127,14 @@ module  GameControl_testbench();
 		
 		game_finished <= 0; square <= 9'b000000100; repeat(1) @(posedge clk); // press cell 3 for gold
 
-      game_finished <= 0; square <= 9'b000010000; repeat(1) @(posedge clk); // press cell 5 for purp
+        game_finished <= 0; square <= 9'b000010000; repeat(1) @(posedge clk); // press cell 5 for purp
 
 		game_finished <= 0; square <= 9'b100000000; repeat(1) @(posedge clk); // press cell 9 for gold
 
-      game_finished <= 0; square <= 9'b001000000; repeat(1) @(posedge clk); // press cell 7 for purp
+        game_finished <= 0; square <= 9'b001000000; repeat(1) @(posedge clk); // press cell 7 for purp
 
-		game_finished <= 0; square <= 9'b000100000; repeat(1) @(posedge clk); // press cell 6 for gold
-																				@(posedge clk);
-																				@(posedge clk);
+		game_finished <= 0; square <= 9'b100100000; repeat(1) @(posedge clk); // press cell 6 for gold
+
 		//repeat(7) @(posedge clk); // End test with some space
 		$stop; // End the simulation.*/
 	end 

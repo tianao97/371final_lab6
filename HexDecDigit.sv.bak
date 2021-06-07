@@ -1,4 +1,4 @@
-// Cameron McCarty  Tianao Shi
+// Cameron McCarty
 // 6/6/21
 // EE371-LAB6-Hex display for one digit in hexidecimal
 
@@ -38,7 +38,7 @@ module HexDecDigit_testbench();
 	logic [3:0] digit;
 	logic [6:0] hex;
 
-	HexDecDigit dut (.digit, .hex);
+	HexDecDigit dut (digit, hex);
 
 	//Testing 0-15 as inputs
 	integer i;

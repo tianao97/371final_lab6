@@ -4,7 +4,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output logic [9:0] LEDR;
 	input logic [3:0] KEY;
 	input logic [9:0] SW;
-   input logic N8_DATA_IN;
+    input logic N8_DATA_IN;
 
 	input logic CLOCK_50;
 	output logic [7:0] VGA_R;
@@ -15,18 +15,18 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output logic VGA_HS;
 	output logic VGA_SYNC_N;
 	output logic VGA_VS;
-   output logic N8_LATCH;
-   output logic N8_PULSE; 
+    output logic N8_LATCH;
+    output logic N8_PULSE;
 
 	logic reset, game_reset;
-   logic up, down, select, up1, down1, select1, start1;
-   logic game_finished, purple_win, gold_win; 
-   logic [3:0] count, purp_wins, gold_wins;
-   logic [8:0] square, purp_state, gold_state;
+    logic up, down, select, up1, down1, select1, start1;
+    logic game_finished, purple_win, gold_win; 
+    logic [3:0] count, purp_wins, gold_wins;
+    logic [8:0] square, purp_state, gold_state;
 	logic [9:0] x;
 	logic [8:0] y;
 	logic [7:0] r, g, b;
-   logic [1:0] debug;
+    logic [1:0] debug;
 
 
 	
@@ -84,6 +84,6 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		g <= x[7:0];
 		b <= y[7:0];
 	end */
+
+	
 endmodule
-
-
