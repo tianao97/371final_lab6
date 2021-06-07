@@ -14,6 +14,7 @@ module n8_to_key (
     output logic [8:0] square
     //square: finalized move made by player
     );
+    logic lock;
 
     //Move finalization
     always @(posedge clk) begin
@@ -36,13 +37,18 @@ module n8_to_key (
     always @(posedge clk) begin
         if(reset | select) begin 
             count <= 1;
-        end else if (up & (count < 9)) begin // UP
+        end else if (~lock & up & (count < 9)) begin // UP
             count <= count + 1;
-        end else if (down & (count > 1)) begin// DOWN
+        end else if (~lock & down & (count > 1)) begin// DOWN
             count <= count - 1;
         end else begin //no change
             count <= count;
         end 
     end
-    
+
+    always @(posedge clk) begin
+        if(up | down) lock <= 1;
+        else lock <= 0;
+            
+    end
 endmodule

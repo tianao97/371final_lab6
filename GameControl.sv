@@ -5,13 +5,15 @@
 //This module will output the values of each of the squares from past game inputs. 
 module GameControl(
 	input logic clk, reset,
-	input logic game_finished,
-    //game_finished: win has been achieve, when high will lock the game 
-    input logic [8:0] square,
-    //Square: Input pattern for the game. Defines the key pressed for the current player.
-	output logic [8:0] purp_state, gold_state
+	input logic game_finished, //game_finished: win has been achieve, when high will lock the game 
+ 
+    input logic [8:0] square, //Square: Input pattern for the game. Defines the key pressed for the current player.
+
+	output logic [8:0] purp_state, gold_state,
     //purp_state: current pattern of purple squares on the game board
     //gold_state: current pattern of gold squares on the game board
+    output logic [1:0] debug
+    //Debug: signal used to output the game state to leds
 	);
     
     enum {purp_move, gold_move, win} moveq, moved;
@@ -109,19 +111,27 @@ module  GameControl_testbench();
 
 
 	initial begin	
-		/*#######################################################*
+        // Test 1 - simulate a game
+		/*#######################################################*/
 		
-									/* TEST 1 - s0 loop, to s1, less than loop, then greater than loop, then to s2, then done loop, then to s0 * 
-		reset <= 0; on <= 0; finished <= 0; less <= 0; great <= 0; test <= 0;//initialize
+		
+		reset <= 0; game_finished <= 0; square <= 9'b000000000; test <= 0;//initialize
 		reset <= 1; repeat(2) @(posedge clk); // Always reset FSMs at start
 		reset <= 0; repeat(1) @(posedge clk);
 		
 		repeat(3) @(posedge clk); // pre start loop
 		
-		on <= 1; less <= 1; repeat(3) @(posedge clk); //move to S1 and less loop
-		great <= 1; less <= 0; repeat(3) @(posedge clk); // try greater loop
-		finished <= 1; repeat(3) @(posedge clk); // move to S2 and the done loop
-		on <= 0; repeat(3) @(posedge clk); //move to S0 again
+		game_finished <= 0; square <= 9'b000000001; repeat(1) @(posedge clk); // press cell 1 for purp
+		
+		game_finished <= 0; square <= 9'b000000100; repeat(1) @(posedge clk); // press cell 3 for gold
+
+        game_finished <= 0; square <= 9'b000010000; repeat(1) @(posedge clk); // press cell 5 for purp
+
+		game_finished <= 0; square <= 9'b100000000; repeat(1) @(posedge clk); // press cell 9 for gold
+
+        game_finished <= 0; square <= 9'b001000000; repeat(1) @(posedge clk); // press cell 7 for purp
+
+		game_finished <= 0; square <= 9'b100100000; repeat(1) @(posedge clk); // press cell 6 for gold
 
 		//repeat(7) @(posedge clk); // End test with some space
 		$stop; // End the simulation.*/

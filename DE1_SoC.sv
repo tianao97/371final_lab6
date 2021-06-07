@@ -26,6 +26,9 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	logic [9:0] x;
 	logic [8:0] y;
 	logic [7:0] r, g, b;
+    logic [1:0] debug;
+
+
 	
     //Inputs
     assign reset = SW[0];
@@ -35,13 +38,13 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     //Assign intermediate logic (as suggested by padlet)
     assign up = up1;
     assign down = down1;
-    assign slect = select1;
+    assign select = select1;
     assign game_reset = start1;
 
     n8_to_key n8_decoder (.clk(CLOCK_50), .reset(reset), .up(up), .down(down), .select(select), .count(count), .square(square));
 
     //Control Path
-    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state));
+    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state), .debug(debug));
     win_logic win (.purp_state(purp_state), .gold_state(gold_state), .game_finished(game_finished), .purple_win(purple_win), .gold_win(gold_win));
 	
     //Data Path
