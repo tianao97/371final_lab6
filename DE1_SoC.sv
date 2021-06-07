@@ -49,6 +49,16 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 
     HexDecDigit selecter (.digit(count), .hex(HEX5)); // HEX5
+	
+    assign LEDR[0] = game_finished;
+    assign LEDR[1] = purple_win;
+    assign LEDR[2] = gold_win;
+
+    assign LEDR[9] = up;
+    assign LEDR[8] = down;
+    assign LEDR[7] = select;
+    assign LEDR[6] = game_reset;
+
 
 
     assign HEX0 = '1;
