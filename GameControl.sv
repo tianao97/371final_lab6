@@ -5,8 +5,8 @@
 //This module will output the values of each of the squares from past game inputs. 
 module GameControl(
 	input logic clk, reset,
-	input logic win,
-    //Win: win has been achieve, when high will lock the game 
+	input logic game_finished,
+    //game_finished: win has been achieve, when high will lock the game 
     input logic [8:0] square,
     //Square: Input pattern for the game. Defines the key pressed for the current player.
 	output logic [8:0] purp_state, gold_state
@@ -30,7 +30,7 @@ module GameControl(
 	always_comb begin
 		case (moveq)
 			purp_move:
-                if(win) begin // Hold on win
+                if(game_finished) begin // Hold on win
                     moved = win;
                     purpd = purpq;
                     goldd = goldq;
@@ -44,7 +44,7 @@ module GameControl(
                     goldd = goldq;
 				end
 			gold_move:
-				if(win) begin // Hold on win
+				if(game_finished) begin // Hold on win
                     moved = win;
                     purpd = purpq;
                     goldd = goldq;
@@ -92,13 +92,13 @@ endmodule
 
 
 module  GameControl_testbench();
-	logic clk, reset,
-	logic win,
-    logic [8:0] square,
-    logic [8:0] purp_state, gold_state
+	logic clk, reset;
+	logic game_finished;
+    logic [8:0] square;
+    logic [8:0] purp_state, gold_state;
 	logic test; //A dummy variable used to see when each test case is done in modelsim.
 
-	 GameControl dut (clk, reset, win, square, purp_state, gold_state);
+	GameControl dut (clk, reset, game_finished, square, purp_state, gold_state);
 
 	// Set up a simulated clock.
 	parameter CLOCK_PERIOD=100;
@@ -109,9 +109,9 @@ module  GameControl_testbench();
 
 
 	initial begin	
-		/*#######################################################*/
+		/*#######################################################*
 		
-									/* TEST 1 - s0 loop, to s1, less than loop, then greater than loop, then to s2, then done loop, then to s0 */
+									/* TEST 1 - s0 loop, to s1, less than loop, then greater than loop, then to s2, then done loop, then to s0 * 
 		reset <= 0; on <= 0; finished <= 0; less <= 0; great <= 0; test <= 0;//initialize
 		reset <= 1; repeat(2) @(posedge clk); // Always reset FSMs at start
 		reset <= 0; repeat(1) @(posedge clk);
@@ -124,6 +124,6 @@ module  GameControl_testbench();
 		on <= 0; repeat(3) @(posedge clk); //move to S0 again
 
 		//repeat(7) @(posedge clk); // End test with some space
-		$stop; // End the simulation.
+		$stop; // End the simulation.*/
 	end 
 endmodule

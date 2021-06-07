@@ -1,6 +1,6 @@
 // Cameron McCarty
-// 4/21/21
-// EE371-LAB2-Hex display for one digit in hexidecimal
+// 6/6/21
+// EE371-LAB6-Hex display for one digit in hexidecimal
 
 //This module will create the hex code for the ones place of a four bit hexidecimal number.
 module HexDecDigit (digit, hex);
@@ -46,5 +46,5 @@ module HexDecDigit_testbench();
 			for(i=0; i<16; i++) begin
 				{digit} = i; #10;
 			end
-		end
+	end
 	endmodule 

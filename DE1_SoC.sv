@@ -4,55 +4,59 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output logic [9:0] LEDR;
 	input logic [3:0] KEY;
 	input logic [9:0] SW;
-    input N8_DATA_IN,
+    input logic N8_DATA_IN;
 
-	input CLOCK_50;
-	output [7:0] VGA_R;
-	output [7:0] VGA_G;
-	output [7:0] VGA_B;
-	output VGA_BLANK_N;
-	output VGA_CLK;
-	output VGA_HS;
-	output VGA_SYNC_N;
-	output VGA_VS;
-    output N8_LATCH,
-    output N8_PULSE,
+	input logic CLOCK_50;
+	output logic [7:0] VGA_R;
+	output logic [7:0] VGA_G;
+	output logic [7:0] VGA_B;
+	output logic VGA_BLANK_N;
+	output logic VGA_CLK;
+	output logic VGA_HS;
+	output logic VGA_SYNC_N;
+	output logic VGA_VS;
+    output logic N8_LATCH;
+    output logic N8_PULSE;
 
-	logic reset;
+	logic reset, game_reset;
+    logic up, down, select;
+    logic game_finished, purple_win; 
+    logic [3:0] count;
+    logic [8:0] square, purp_state, gold_state;
 	logic [9:0] x;
 	logic [8:0] y;
 	logic [7:0] r, g, b;
 	
     //Inputs
-n8_driver driver( .clk(CLOCK_50), .data_in(N8_DATA_IN), .latch(N8_LATCH), .pulse(N8_PULSE), .up(up),
-                  .down(down), .left(left), .right(right), .select(LEDR[9]), .start(LEDR[8]), .a(a), .b(b));
+    assign reset = SW[0];
 
-    assign reset = 0;
-	
-    n8_to_key n8_decoder (clk, reset, up, down, select, count, square);
+    n8_driver driver( .clk(CLOCK_50), .data_in(N8_DATA_IN), .latch(N8_LATCH), .pulse(N8_PULSE), .up(up),
+                      .down(down), .select(select), .start(game_reset));
+
+    n8_to_key n8_decoder (.clk(CLOCK_50), .reset(reset), .up(up), .down(down), .select(select), .count(count), .square(square));
 
     //Control Path
-    GameControl controller (clk, reset, win, square, purp_state, gold_state);
+    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state));
+    win_logic win (.purp_state(purp_state), .gold_state(gold_state), .game_finished(game_finished), .purple_win(purple_win), .gold_win(gold_win));
 	
     //Data Path
-	Display disp (.clk(clk), .enable(enable), .data_in(data_in), .data_out(data_out));
-
-
+    Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
 	
-	
-
     //Outputs
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
 			 .VGA_R, .VGA_G, .VGA_B, .VGA_BLANK_N,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 
+    HexDecDigit selecter (.digit(count), .hex(HEX5)); // HEX5
+
+
     assign HEX0 = '1;
 	assign HEX1 = '1;
 	assign HEX2 = '1;
 	assign HEX3 = '1;
 	assign HEX4 = '1;
-	assign HEX5 = '1;
+	//assign HEX5 = '1;
 
     /*always_ff @(posedge CLOCK_50) begin
 		r <= SW[7:0];

@@ -36,9 +36,9 @@ module n8_to_key (
     always @(posedge clk) begin
         if(reset | select) begin 
             count <= 1;
-        end else if (up) begin // UP
+        end else if (up & (count < 9)) begin // UP
             count <= count + 1;
-        end else if (down) begin// DOWN
+        end else if (down & (count > 1)) begin// DOWN
             count <= count - 1;
         end else begin //no change
             count <= count;
