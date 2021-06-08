@@ -35,8 +35,8 @@ module n8_to_key (
 
     // Counter
     always @(posedge clk) begin
-        if(reset | select) begin 
-            count <= 1;
+        if(reset | select) begin // begin the game in the middle
+            count <= 5;
         end else if (~lock & up & (count < 9)) begin // UP
             count <= count + 1;
         end else if (~lock & down & (count > 1)) begin// DOWN

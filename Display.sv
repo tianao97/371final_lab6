@@ -19,69 +19,69 @@ module Display(
     always_ff @(posedge clk) begin
         // Square 1
         if ((x > 0 & x < 213 & y > 0 & y < 160) & gold[0])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 0 & x < 213 & y > 0 & y < 160) & purp[0])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 0 & x < 213 & y > 0 & y < 160) & !gold[0] & !purp[0])
             {r, g, b} <= 24'hFFFFFFF;// default white
         // Square 2
         else if((x > 215 & x < 426 & y > 0 & y < 160) & gold[1])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 215 & x < 426 & y > 0 & y < 160) & purp[1])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 215 & x < 426 & y > 0 & y < 160) & !gold[1] & !purp[1])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 3
         else if((x > 428 & x < 640 & y > 0 & y < 160) & gold[2])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 428 & x < 640 & y > 0 & y < 160) & purp[2])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 428 & x < 640 & y > 0 & y < 160) & !gold[2] & !purp[2])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 4
         else if((x > 0 & x < 213 & y > 162 & y < 320) & gold[3])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 0  & x < 213 & y > 162 & y < 320) & purp[3])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 0 & x < 213 & y > 162 & y < 320) & !gold[3] & !purp[3])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 5
         else if((x > 215 & x < 426 & y > 162 & y < 320) & gold[4])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 215 & x < 426 & y > 162 & y < 320) & purp[4])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 215 & x < 426 & y > 162 & y < 320) & !gold[4] & !purp[4])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 6
         else if((x > 428 & x < 640 & y > 162 & y < 320) & gold[5])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 428 & x < 640 & y > 162 & y < 320) & purp[5])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 428 & x < 640 & y > 162 & y < 320) & !gold[5] & !purp[5])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 7
         else if((x > 0 & x < 213 & y > 322 & y < 480) & gold[6])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 0 & x < 213 & y > 322 & y < 480) & purp[6])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 0 & x < 213 & y > 322 & y < 480) & !gold[6] & !purp[6])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 8
         else if((x > 215 & x < 426 & y > 322 & y < 480) & gold[7])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 215 & x < 426 & y > 322 & y < 480) & purp[7])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 215 & x < 426 & y > 322 & y < 480) & !gold[7] & !purp[7])
             {r, g, b} <= 24'hFFFFFF;// default white
         // Square 9 /////
         else if((x > 428 & x < 640 & y > 322 & y < 480) & gold[8])
-            {r, g, b} <= 24'hF9C700; // gold
+            {r, g, b} <= 24'hFFFF00; // gold
         else if((x > 428 & x < 640 & y > 322 & y < 480) & purp[8])
-            {r, g, b} <= 24'h6600CC;// purple
+            {r, g, b} <= 24'hFF00FF;// purple
         else if((x > 428 & x < 640 & y > 322 & y < 480) & !gold[8] & !purp[8])
             {r, g, b} <= 24'hFFFFFF;// default white
         else
-            {r, g, b} <= 24'h000000;// default black 
+            {r, g, b} <= 24'h000000;// default black background (color of the lines in between cells)
     end
 endmodule
 

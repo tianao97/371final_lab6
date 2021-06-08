@@ -12,8 +12,8 @@ module GameControl(
 	output logic [8:0] purp_state, gold_state,
     //purp_state: current pattern of purple squares on the game board
     //gold_state: current pattern of gold squares on the game board
-    output logic [1:0] debug
-    //Debug: signal used to output the game state to leds
+    output logic [1:0] player
+    //player: signal used to output the game state to leds
 	);
     
     enum {purp_move, gold_move, win} moveq, moved;
@@ -27,8 +27,8 @@ module GameControl(
 	//Output logic
     assign purp_state = purpq;
     assign gold_state = goldq;
-    assign debug[0] = moveq == purp_move;
-    assign debug[1] = moveq == gold_move;
+    assign player[0] = moveq == purp_move;
+    assign player[1] = moveq == gold_move;
 
 	// Next State logic
 	always_comb begin
@@ -52,7 +52,7 @@ module GameControl(
                     moved = win;
                     purpd = purpq;
                     goldd = goldq;
-                end else if(square == '0) begin // No input (wait)
+                end else if(square == '0) begin // No input or invalid move (wait)
 					moved = moveq;
                     purpd = purpq;
                     goldd = goldq;

@@ -77,11 +77,12 @@ module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, lo
 			valueq <= valued;
 	end
 
-    //Lock
+    /*Lock
     always @(posedge clk) begin
         if(inc) lock <= 1;
         else lock <= 0;    
-    end
+    end*/
+    assign lock = 0;
 endmodule 
 
 

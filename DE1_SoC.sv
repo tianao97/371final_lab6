@@ -26,11 +26,12 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	logic [9:0] x;
 	logic [8:0] y;
 	logic [7:0] r, g, b;
-   logic [1:0] debug;
+   logic [1:0] player;
 
 
 	
     //Inputs
+
     assign reset = SW[0];
 
     n8_driver driver( .clk(CLOCK_50), .data_in(N8_DATA_IN), .latch(N8_LATCH), .pulse(N8_PULSE), .up(up1),
@@ -44,17 +45,21 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     n8_to_key n8_decoder (.clk(CLOCK_50), .reset(reset), .up(up), .down(down), .select(select), .count(count), .square(square));
 
     //Control Path
-    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state), .debug(debug));
+
+    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state), .player(player)));
     win_logic win (.purp_state(purp_state), .gold_state(gold_state), .game_finished(game_finished), .purple_win(purple_win), .gold_win(gold_win));
-	
+
     //Data Path
-    Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
 
-	GeneralRegister purp_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_finished & purp_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(purp_wins));
-	GeneralRegister gold_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_finished & gold_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(gold_wins));
-
+    // Add point when a new game has started from a purp win
+	GeneralRegister purp_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_reset & purp_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(purp_wins));
+    // Add point when a new game has started from a gold win
+	GeneralRegister gold_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_reset & gold_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(gold_wins));
 	
     //Outputs
+
+    Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
+	
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
 			 .VGA_R, .VGA_G, .VGA_B, .VGA_BLANK_N,
@@ -68,8 +73,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     assign LEDR[0] = game_finished;
     assign LEDR[1] = purple_win;
     assign LEDR[2] = gold_win;
-
-    //assign LEDR[9:8] = debug; // Used to see whose move is next for debug
+    assign LEDR[9:8] = player;
 
 
     //assign HEX0 = '1;
