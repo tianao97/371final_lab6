@@ -1,10 +1,9 @@
 // Cameron McCarty
-// 6/6/21
+// 5/15/21
 // EE371-LAB4 Multi Purpose register
 
 // The register module is capable of loading, shifting right, incramenting, decramenting, and looping. All with custom minimums and maximums to the value
-// Carefull this register can load in, or shift to, values outside of its max or min, max and min are just limits to the counters. Added in lab 6 is, that the
-// increment will lock, meaning that each pulse will only increment by one no matter the width.
+// Carefull this register can load in, or shift to, values outside of its max or min, max and min are just limits to the counters.
 module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, logshift, loop, min, max, in, out);
 	input logic clk, load, shr, shl, inc, dec, logshift, loop;
 	input logic [depth - 1:0] min, max, in;
@@ -23,7 +22,6 @@ module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, lo
 	
 	// State variables
 	logic [depth - 1:0] valued, valueq;
-    logic lock;
 	//	valueq: current value stored
 	// valued: value to be stored on next clock cycle
 	
@@ -35,7 +33,7 @@ module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, lo
 		if(loop & ~(shr | shl) & (inc | dec)) begin//loop mode with no shift
 			if(inc & (valueq == max)) // inc at max
 				valued = min;
-			else if(inc & ~lock) // normal inc
+			else if(inc) // normal inc
 				valued = valueq + 1;
 			else if (dec & (valueq == min)) // dec at min
 				valued = max;
@@ -46,7 +44,7 @@ module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, lo
 		end else if(~(shr | shl) & (inc | dec)) begin//end at max mode with no shift
 			if(inc & (valueq == max)) // inc at max
 				valued = max;
-			else if(inc & ~lock) // normal inc
+			else if(inc) // normal inc
 				valued = valueq + 1;
 			else if (dec & (valueq == min)) // dec at min
 				valued = valueq;
@@ -76,13 +74,6 @@ module GeneralRegister #(parameter depth = 5) (clk, load, shr, shl, inc, dec, lo
 		else
 			valueq <= valued;
 	end
-
-    /*Lock
-    always @(posedge clk) begin
-        if(inc) lock <= 1;
-        else lock <= 0;    
-    end*/
-    assign lock = 0;
 endmodule 
 
 
