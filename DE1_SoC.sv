@@ -1,3 +1,8 @@
+// Cameron McCarty, Tianao Shi
+// 6/6/21
+// EE371-LAB6 top level module
+
+//This module implements a Tic-Tac-Toe game on the DE1_SoC
 module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 					 CLOCK_50, VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_CLK, VGA_HS, VGA_SYNC_N, VGA_VS, N8_DATA_IN, N8_LATCH, N8_PULSE,);
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
@@ -23,8 +28,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
    logic game_finished, purple_win, gold_win; 
    logic [3:0] count, purp_wins, gold_wins;
    logic [8:0] square, purp_state, gold_state;
-	logic [9:0] x;
-	logic [8:0] y;
+	logic [9:0] x; // Current x position
+	logic [8:0] y; // Current y position
 	logic [7:0] r, g, b;
    logic [1:0] player;
 

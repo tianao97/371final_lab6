@@ -46,13 +46,7 @@ module win_logic_testbench();
         initial begin
                 for(i=0; i<512; i++) begin
                     {purp_state} = i; #10;
-                end
-        end
-
-        integer k;
-        initial begin
-                for(k=0; k<512; k++) begin
-                    {gold_state} = k; #10;
+                    {gold_state} = i; #10;
                 end
         end
 endmodule
