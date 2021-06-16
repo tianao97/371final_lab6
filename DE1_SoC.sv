@@ -29,8 +29,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
    logic game_finished, purple_win, gold_win; 
    logic [3:0] count, purp_wins, gold_wins;
    logic [8:0] square, purp_state, gold_state;
-	logic [9:0] x;
-	logic [8:0] y;
+	logic [9:0] x; // Current x position
+	logic [8:0] y; // Current y position
 	logic [7:0] r, g, b;
    logic [1:0] player;
 	

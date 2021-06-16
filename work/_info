@@ -56,3 +56,49 @@ R11
 !i113 1
 R12
 n@game@control_testbench
+vwin_logic
+R1
+Z13 !s110 1623130437
+!i10b 1
+!s100 8l;6zMiX>f>=YENIO49IT1
+IJUoKDgcnAGM[TkHU[4Td@0
+R3
+Z14 !s105 win_logic_sv_unit
+S1
+R0
+Z15 w1623130429
+Z16 8./win_logic.sv
+Z17 F./win_logic.sv
+L0 6
+R8
+r1
+!s85 0
+31
+Z18 !s108 1623130437.000000
+Z19 !s107 ./win_logic.sv|
+Z20 !s90 -reportprogress|300|./win_logic.sv|
+!i113 1
+R12
+vwin_logic_testbench
+R1
+R13
+!i10b 1
+!s100 JQL9@GXLP4KFZUTKhU7JO3
+I>F5Z5_PGKEfOhC;dn]Pee0
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 38
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12

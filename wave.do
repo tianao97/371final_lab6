@@ -1,14 +1,12 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /GameControl_testbench/clk
-add wave -noupdate /GameControl_testbench/reset
-add wave -noupdate /GameControl_testbench/game_finished
-add wave -noupdate /GameControl_testbench/square
-add wave -noupdate /GameControl_testbench/purp_state
-add wave -noupdate /GameControl_testbench/gold_state
-add wave -noupdate /GameControl_testbench/dut/moveq
-add wave -noupdate /GameControl_testbench/dut/moved
-add wave -noupdate /GameControl_testbench/test
+add wave -noupdate /win_logic_testbench/purp_state
+add wave -noupdate /win_logic_testbench/gold_state
+add wave -noupdate /win_logic_testbench/game_finished
+add wave -noupdate /win_logic_testbench/purple_win
+add wave -noupdate /win_logic_testbench/gold_win
+add wave -noupdate /win_logic_testbench/i
+add wave -noupdate /win_logic_testbench/k
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {1068 ps} 0}
 quietly wave cursor active 1
@@ -26,4 +24,4 @@ configure wave -griddelta 2
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {241 ps} {1198 ps}
+WaveRestoreZoom {4211 ps} {5168 ps}
