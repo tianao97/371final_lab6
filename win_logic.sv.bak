@@ -3,16 +3,12 @@
 // EE371-LAB6 Winner logic moudle
 
 //This module will output the winner of the game.
-//It takes 9 bits inputs purp_state and gold_state
-//The output are game_finsihed and purple_win, gold_state.
 module win_logic (purp_state, gold_state, game_finished, purple_win, gold_win);
     input logic [8:0] purp_state, gold_state;  //current pattern of purple and gold squares on the game board
 
     output logic game_finished;  //signal if the game is already finished
     output logic purple_win, gold_win; //signal for who is the winner
 
-	 // The always comb bloc check the input purp_state and gold_state values
-	// It sets the values of two win signals and also the game_finished flag
     always_comb begin
         if ((purp_state & 9'b111000000) == 9'b111000000 | (purp_state & 9'b000111000) == 9'b000111000 | (purp_state & 9'b000000111) == 9'b000000111 | // Purple has won
             (purp_state & 9'b100100100) == 9'b100100100 | (purp_state & 9'b010010010) == 9'b010010010 | (purp_state & 9'b001001001) == 9'b001001001 |
@@ -38,7 +34,7 @@ module win_logic (purp_state, gold_state, game_finished, purple_win, gold_win);
     end
 endmodule
 
-// the win_logic_testbench tests 512 different values for each of the color states.
+
 module win_logic_testbench();
 		logic [8:0] purp_state, gold_state;
         logic game_finished;

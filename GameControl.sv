@@ -76,7 +76,8 @@ module GameControl(
 			endcase
 	end
 
-	// Dffs
+	// Dffs block set purpq and goldq value to 0 when rest is high,
+	// else it change the update purq and goldq.
 	always_ff @(posedge clk) begin
 		if (reset) begin
 			moveq <= purp_move;
@@ -90,11 +91,7 @@ module GameControl(
 	end
 endmodule
 
-
-
-
-
-
+// This testbench test the outputs purp_state, gold_state values based on different input value square
 module  GameControl_testbench();
 	logic clk, reset;
 	logic game_finished;

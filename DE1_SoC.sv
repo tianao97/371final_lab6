@@ -1,3 +1,9 @@
+// Cameron McCarty, Tianao Shi
+// 6/6/21
+// EE371-LAB6 top level module
+
+//This module implements a Tic-Tac-Toe game on the DE1_SoC
+//It connects all the submodules together 
 module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 					 CLOCK_50, VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_CLK, VGA_HS, VGA_SYNC_N, VGA_VS, N8_DATA_IN, N8_LATCH, N8_PULSE,);
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
@@ -27,8 +33,6 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	logic [8:0] y;
 	logic [7:0] r, g, b;
    logic [1:0] player;
-
-
 	
     //Inputs
 
@@ -45,8 +49,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     n8_to_key n8_decoder (.clk(CLOCK_50), .reset(reset), .up(up), .down(down), .select(select), .count(count), .square(square));
 
     //Control Path
-
-    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state), .player(player)));
+	// GameControl module will output the values of each of the squares from past game inputs. 
+    GameControl controller (.clk(CLOCK_50), .reset(reset | game_reset), .game_finished(game_finished), .square(square), .purp_state(purp_state), .gold_state(gold_state), .player(player));
     win_logic win (.purp_state(purp_state), .gold_state(gold_state), .game_finished(game_finished), .purple_win(purple_win), .gold_win(gold_win));
 
     //Data Path
@@ -56,17 +60,19 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     // Add point when a new game has started from a gold win
 	GeneralRegister gold_wins_count (.clk(CLOCK_50), .load('0), .shr('0), .shl(0), .inc(game_reset & gold_win), .dec('0), .logshift('0), .loop('0), .min('0), .max('hf), .in('0), .out(gold_wins));
 	
-    //Outputs
-
-    Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
+   // Display module will output the rgb values for each pixel
+   Display disp (.clk(CLOCK_50), .x(x), .y(y), .purp(purp_state), .gold(gold_state), .r(r), .g(g), .b(b));
 	
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
 			 .VGA_R, .VGA_G, .VGA_B, .VGA_BLANK_N,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 
+	//hex5 display the value of count 
     HexDecDigit selecter (.digit(count), .hex(HEX5)); // HEX5
+	 //hex0 display when purp_wins is high
     HexDecDigit purp_disp (.digit(purp_wins), .hex(HEX0)); // HEX0 PURPLE
+	 //hex1 display when purp_wins is high
     HexDecDigit gold_disp (.digit(gold_wins), .hex(HEX1)); // HEX1 GOLD
 
 	

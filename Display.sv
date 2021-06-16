@@ -85,6 +85,7 @@ module Display(
     end
 endmodule
 
+//This testbench tests the case when the square 1, 2, 3 to be purple and gold 
 module Display_testbench();
         logic clk;
         logic [9:0] x;

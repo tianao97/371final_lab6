@@ -34,6 +34,7 @@ module HexDecDigit (digit, hex);
 	end
 endmodule 
 
+//this testbench test the output hex digits according to different input value of digit
 module HexDecDigit_testbench();
 	logic [3:0] digit;
 	logic [6:0] hex;

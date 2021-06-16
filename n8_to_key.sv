@@ -3,6 +3,9 @@
 // EE371-LAB6 controler decoder
 
 //This module will take in the N8 controller input and allow the user to select a square
+//Inputs are clk, reset, up, down, and select signals 
+//outputs are 4 bits count and 9 bits square signal
+//this module server as a submodule in this lab 
 module n8_to_key (
     input clk, reset,
     input up, down, select,

@@ -1,5 +1,5 @@
-// Cameron McCarty 
-// 6/6/21
+// Cameron McCarty
+// 5/15/21
 // EE371-LAB4 Multi Purpose register
 
 // The register module is capable of loading, shifting right, incramenting, decramenting, and looping. All with custom minimums and maximums to the value

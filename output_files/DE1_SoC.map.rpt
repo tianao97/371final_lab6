@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Mon Jun 07 13:49:44 2021
+Mon Jun 07 23:08:20 2021
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -25,12 +25,11 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  17. Port Connectivity Checks: "video_driver:v1|CLOCK25_PLL:c25_gen"
  18. Port Connectivity Checks: "GeneralRegister:gold_wins_count"
  19. Port Connectivity Checks: "GeneralRegister:purp_wins_count"
- 20. Port Connectivity Checks: "GameControl:controller"
- 21. Port Connectivity Checks: "n8_driver:driver"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
+ 20. Port Connectivity Checks: "n8_driver:driver"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,13 +56,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 07 13:49:44 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 07 23:08:19 2021       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 198                                         ;
+; Total registers                 ; 189                                         ;
 ; Total pins                      ; 99                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -177,29 +176,30 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                        ;
-+-------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path    ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                       ; Library     ;
-+-------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------+-------------+
-; video_driver.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/video_driver.sv                                                   ;             ;
-; altera_up_avalon_video_vga_timing.v ; yes             ; User Verilog HDL File              ; C:/Github projects/371final_lab6/altera_up_avalon_video_vga_timing.v                               ;             ;
-; DE1_SoC.sv                          ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/DE1_SoC.sv                                                        ;             ;
-; CLOCK25_PLL.v                       ; yes             ; User Wizard-Generated File         ; C:/Github projects/371final_lab6/CLOCK25_PLL.v                                                     ;             ;
-; CLOCK25_PLL/CLOCK25_PLL_0002.v      ; yes             ; User Verilog HDL File              ; C:/Github projects/371final_lab6/CLOCK25_PLL/CLOCK25_PLL_0002.v                                    ; CLOCK25_PLL ;
-; Display.sv                          ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/Display.sv                                                        ;             ;
-; GameControl.sv                      ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/GameControl.sv                                                    ;             ;
-; HexDecDigit.sv                      ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/HexDecDigit.sv                                                    ;             ;
-; n8_driver.v                         ; yes             ; User Verilog HDL File              ; C:/Github projects/371final_lab6/n8_driver.v                                                       ;             ;
-; n8_to_key.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/n8_to_key.sv                                                      ;             ;
-; win_logic.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Github projects/371final_lab6/win_logic.sv                                                      ;             ;
-; generalregister.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Github projects/371final_lab6/generalregister.sv                                                ;             ;
-; altera_pll.v                        ; yes             ; Megafunction                       ; c:/quartus/quartus-lite-17.0.0.595-windows/components/quartus/libraries/megafunctions/altera_pll.v ;             ;
-+-------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++-------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path    ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                       ; Library     ;
++-------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+-------------+
+; GeneralRegister.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/GeneralRegister.sv                                                ;             ;
+; video_driver.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/video_driver.sv                                                   ;             ;
+; altera_up_avalon_video_vga_timing.v ; yes             ; User Verilog HDL File        ; C:/Github projects/371final_lab6/altera_up_avalon_video_vga_timing.v                               ;             ;
+; DE1_SoC.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/DE1_SoC.sv                                                        ;             ;
+; CLOCK25_PLL.v                       ; yes             ; User Wizard-Generated File   ; C:/Github projects/371final_lab6/CLOCK25_PLL.v                                                     ; CLOCK25_PLL ;
+; CLOCK25_PLL/CLOCK25_PLL_0002.v      ; yes             ; User Verilog HDL File        ; C:/Github projects/371final_lab6/CLOCK25_PLL/CLOCK25_PLL_0002.v                                    ; CLOCK25_PLL ;
+; Display.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/Display.sv                                                        ;             ;
+; GameControl.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/GameControl.sv                                                    ;             ;
+; HexDecDigit.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/HexDecDigit.sv                                                    ;             ;
+; n8_driver.v                         ; yes             ; User Verilog HDL File        ; C:/Github projects/371final_lab6/n8_driver.v                                                       ;             ;
+; n8_to_key.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/n8_to_key.sv                                                      ;             ;
+; win_logic.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Github projects/371final_lab6/win_logic.sv                                                      ;             ;
+; altera_pll.v                        ; yes             ; Megafunction                 ; c:/quartus/quartus-lite-17.0.0.595-windows/components/quartus/libraries/megafunctions/altera_pll.v ;             ;
++-------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,16 +207,16 @@ agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                        ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 211                                                                                                          ;
+; Estimate of Logic utilization (ALMs needed) ; 175                                                                                                          ;
 ;                                             ;                                                                                                              ;
-; Combinational ALUT usage for logic          ; 356                                                                                                          ;
-;     -- 7 input functions                    ; 1                                                                                                            ;
-;     -- 6 input functions                    ; 62                                                                                                           ;
-;     -- 5 input functions                    ; 58                                                                                                           ;
-;     -- 4 input functions                    ; 54                                                                                                           ;
-;     -- <=3 input functions                  ; 181                                                                                                          ;
+; Combinational ALUT usage for logic          ; 293                                                                                                          ;
+;     -- 7 input functions                    ; 3                                                                                                            ;
+;     -- 6 input functions                    ; 50                                                                                                           ;
+;     -- 5 input functions                    ; 36                                                                                                           ;
+;     -- 4 input functions                    ; 53                                                                                                           ;
+;     -- <=3 input functions                  ; 151                                                                                                          ;
 ;                                             ;                                                                                                              ;
-; Dedicated logic registers                   ; 198                                                                                                          ;
+; Dedicated logic registers                   ; 189                                                                                                          ;
 ;                                             ;                                                                                                              ;
 ; I/O pins                                    ; 99                                                                                                           ;
 ;                                             ;                                                                                                              ;
@@ -226,9 +226,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                                            ;
 ;                                             ;                                                                                                              ;
 ; Maximum fan-out node                        ; video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 116                                                                                                          ;
-; Total fan-out                               ; 1989                                                                                                         ;
-; Average fan-out                             ; 2.64                                                                                                         ;
+; Maximum fan-out                             ; 112                                                                                                          ;
+; Total fan-out                               ; 1722                                                                                                         ;
+; Average fan-out                             ; 2.53                                                                                                         ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 
@@ -237,20 +237,20 @@ agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Entity Name                       ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |DE1_SoC                                        ; 356 (1)             ; 198 (0)                   ; 0                 ; 0          ; 99   ; 0            ; |DE1_SoC                                                                                               ; DE1_SoC                           ; work         ;
-;    |Display:disp|                               ; 100 (100)           ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|Display:disp                                                                                  ; Display                           ; work         ;
-;    |GameControl:controller|                     ; 23 (23)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|GameControl:controller                                                                        ; GameControl                       ; work         ;
-;    |GeneralRegister:gold_wins_count|            ; 8 (8)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|GeneralRegister:gold_wins_count                                                               ; GeneralRegister                   ; work         ;
+; |DE1_SoC                                        ; 293 (2)             ; 189 (0)                   ; 0                 ; 0          ; 99   ; 0            ; |DE1_SoC                                                                                               ; DE1_SoC                           ; work         ;
+;    |Display:disp|                               ; 39 (39)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|Display:disp                                                                                  ; Display                           ; work         ;
+;    |GameControl:controller|                     ; 25 (25)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|GameControl:controller                                                                        ; GameControl                       ; work         ;
+;    |GeneralRegister:gold_wins_count|            ; 9 (9)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|GeneralRegister:gold_wins_count                                                               ; GeneralRegister                   ; work         ;
 ;    |HexDecDigit:gold_disp|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|HexDecDigit:gold_disp                                                                         ; HexDecDigit                       ; work         ;
 ;    |HexDecDigit:selecter|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|HexDecDigit:selecter                                                                          ; HexDecDigit                       ; work         ;
 ;    |n8_driver:driver|                           ; 38 (38)             ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_driver:driver                                                                              ; n8_driver                         ; work         ;
 ;    |n8_to_key:n8_decoder|                       ; 21 (21)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_to_key:n8_decoder                                                                          ; n8_to_key                         ; work         ;
-;    |video_driver:v1|                            ; 139 (87)            ; 114 (65)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                               ; video_driver                      ; work         ;
-;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                           ; CLOCK25_PLL                       ; work         ;
+;    |video_driver:v1|                            ; 131 (83)            ; 110 (61)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                               ; video_driver                      ; work         ;
+;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                           ; CLOCK25_PLL                       ; CLOCK25_PLL  ;
 ;          |CLOCK25_PLL_0002:clock25_pll_inst|    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst                         ; CLOCK25_PLL_0002                  ; CLOCK25_PLL  ;
 ;             |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i ; altera_pll                        ; work         ;
-;       |altera_up_avalon_video_vga_timing:video| ; 52 (52)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                       ; altera_up_avalon_video_vga_timing ; work         ;
-;    |win_logic:win|                              ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|win_logic:win                                                                                 ; win_logic                         ; work         ;
+;       |altera_up_avalon_video_vga_timing:video| ; 48 (48)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                       ; altera_up_avalon_video_vga_timing ; work         ;
+;    |win_logic:win|                              ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|win_logic:win                                                                                 ; win_logic                         ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -263,26 +263,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_blue[0,1]  ; Stuck at GND due to stuck port data_in                ;
 ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_green[0,1] ; Stuck at GND due to stuck port data_in                ;
 ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[0,1]   ; Stuck at GND due to stuck port data_in                ;
-; GeneralRegister:purp_wins_count|lock                                   ; Lost fanout                                           ;
 ; GameControl:controller|moveq[2..31]                                    ; Stuck at GND due to stuck port data_in                ;
 ; GeneralRegister:purp_wins_count|valueq[4]                              ; Lost fanout                                           ;
+; Display:disp|b[1..5]                                                   ; Merged with Display:disp|b[0]                         ;
+; Display:disp|g[1..5]                                                   ; Merged with Display:disp|g[0]                         ;
+; Display:disp|r[1..5]                                                   ; Merged with Display:disp|r[0]                         ;
 ; GeneralRegister:purp_wins_count|valueq[0..2]                           ; Merged with GeneralRegister:purp_wins_count|valueq[3] ;
-; Display:disp|b[1]                                                      ; Merged with Display:disp|b[0]                         ;
-; Display:disp|r[1,2]                                                    ; Merged with Display:disp|b[2]                         ;
-; Display:disp|g[3..5]                                                   ; Merged with Display:disp|b[4]                         ;
-; Display:disp|b[5]                                                      ; Merged with Display:disp|b[4]                         ;
-; Display:disp|r[0]                                                      ; Merged with Display:disp|g[0]                         ;
-; Display:disp|r[3,4]                                                    ; Merged with Display:disp|g[1]                         ;
-; Display:disp|g[2]                                                      ; Merged with Display:disp|g[1]                         ;
-; video_driver:v1|rout[0]                                                ; Merged with video_driver:v1|gout[0]                   ;
-; video_driver:v1|rout[1,2]                                              ; Merged with video_driver:v1|bout[2]                   ;
-; video_driver:v1|gout[2]                                                ; Merged with video_driver:v1|gout[1]                   ;
-; video_driver:v1|rout[3,4]                                              ; Merged with video_driver:v1|gout[1]                   ;
-; video_driver:v1|bout[5]                                                ; Merged with video_driver:v1|bout[4]                   ;
-; video_driver:v1|gout[3..5]                                             ; Merged with video_driver:v1|bout[4]                   ;
-; video_driver:v1|bout[1]                                                ; Merged with video_driver:v1|bout[0]                   ;
+; video_driver:v1|rout[1..5]                                             ; Merged with video_driver:v1|rout[0]                   ;
+; video_driver:v1|gout[1..5]                                             ; Merged with video_driver:v1|gout[0]                   ;
+; video_driver:v1|bout[1..5]                                             ; Merged with video_driver:v1|bout[0]                   ;
 ; GeneralRegister:purp_wins_count|valueq[3]                              ; Stuck at GND due to stuck port data_in                ;
-; Total Number of Removed Registers = 64                                 ;                                                       ;
+; Total Number of Removed Registers = 71                                 ;                                                       ;
 +------------------------------------------------------------------------+-------------------------------------------------------+
 
 
@@ -291,12 +282,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 198   ;
+; Total registers                              ; 189   ;
 ; Number of registers using Synchronous Clear  ; 118   ;
 ; Number of registers using Synchronous Load   ; 3     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 57    ;
+; Number of registers using Clock Enable       ; 62    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -307,19 +298,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE1_SoC|GeneralRegister:gold_wins_count|valueq[0]                                ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE1_SoC|n8_to_key:n8_decoder|count[2]                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_blue[5]      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[4] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[6]                                                    ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[6]                                                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[1]  ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[8]                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|n8_to_key:n8_decoder|count[0]                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|n8_to_key:n8_decoder|count[1]                                            ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[9] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[5]                                                    ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[3]                                                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[3]  ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[1]                                                     ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xd[0]                                                    ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[6]                                                     ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[4]                                                    ;
-; 11:1               ; 9 bits    ; 63 LEs        ; 54 LEs               ; 9 LEs                  ; Yes        ; |DE1_SoC|n8_to_key:n8_decoder|square[5]                                           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red          ;
-; 25:1               ; 3 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|Display:disp|r                                                           ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[5]                                                     ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[0]                                                    ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 54 LEs               ; 9 LEs                  ; Yes        ; |DE1_SoC|n8_to_key:n8_decoder|square[1]                                           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_blue         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
@@ -653,60 +643,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "GeneralRegister:gold_wins_count"                                                                                                                                                        ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; load      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; shr       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; shl       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; shl[-1]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; dec       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; logshift  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; loop      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; min       ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "min[4..1]" will be connected to GND.                                        ;
-; min       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; max       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; max[3..0] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; max[4]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; in        ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "in[4..1]" will be connected to GND.                                         ;
-; in        ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; out       ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "out[4..4]" have no fanouts                                                             ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "GeneralRegister:gold_wins_count"                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; load      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; shr       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; shl       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dec       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; logshift  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; loop      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; min       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; max[3..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; max[4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out[4]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "GeneralRegister:purp_wins_count"                                                                                                                                                        ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; load      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; shr       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; shl       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; shl[-1]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; inc       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; dec       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; logshift  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; loop      ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; min       ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "min[4..1]" will be connected to GND.                                        ;
-; min       ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; max       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; max[3..0] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; max[4]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; in        ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "in[4..1]" will be connected to GND.                                         ;
-; in        ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; out       ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "out[4..4]" have no fanouts                                                             ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "GameControl:controller"                                                              ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; debug ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "GeneralRegister:purp_wins_count"                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; load      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; shr       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; shl       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; inc       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dec       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; logshift  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; loop      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; min       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; max[3..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; max[4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out[4]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -726,31 +699,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 198                         ;
-;     ENA               ; 1                           ;
+; arriav_ff             ; 189                         ;
+;     ENA               ; 6                           ;
 ;     ENA SCLR          ; 56                          ;
 ;     SCLR              ; 62                          ;
 ;     SLD               ; 3                           ;
-;     plain             ; 76                          ;
-; arriav_lcell_comb     ; 361                         ;
+;     plain             ; 62                          ;
+; arriav_lcell_comb     ; 299                         ;
 ;     arith             ; 103                         ;
 ;         1 data inputs ; 102                         ;
 ;         2 data inputs ; 1                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 257                         ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 193                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 54                          ;
-;         5 data inputs ; 58                          ;
-;         6 data inputs ; 62                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 53                          ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 50                          ;
 ; boundary_port         ; 99                          ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.69                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.30                        ;
 +-----------------------+-----------------------------+
 
 
@@ -759,7 +732,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -769,16 +742,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 07 13:49:28 2021
+    Info: Processing started: Mon Jun 07 23:07:51 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file generalregister.sv
+    Info (12023): Found entity 1: GeneralRegister File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 7
+    Info (12023): Found entity 2: GeneralRegister_testbench File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 80
+Info (12021): Found 1 design units, including 1 entities, in source file de1_soc_golden_top.v
+    Info (12023): Found entity 1: DE1_SOC_golden_top File: C:/Github projects/371final_lab6/DE1_SOC_golden_top.v Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file clock25_pll_0002.v
+    Info (12023): Found entity 1: CLOCK25_PLL_0002 File: C:/Github projects/371final_lab6/CLOCK25_PLL_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file video_driver.sv
     Info (12023): Found entity 1: video_driver File: C:/Github projects/371final_lab6/video_driver.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file altera_up_avalon_video_vga_timing.v
     Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: C:/Github projects/371final_lab6/altera_up_avalon_video_vga_timing.v Line: 47
-Warning (10238): Verilog Module Declaration warning at DE1_SoC.sv(2): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "DE1_SoC" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 2
+Warning (10238): Verilog Module Declaration warning at DE1_SoC.sv(8): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "DE1_SoC" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file de1_soc.sv
-    Info (12023): Found entity 1: DE1_SoC File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 1
+    Info (12023): Found entity 1: DE1_SoC File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file clock25_pll.v
     Info (12023): Found entity 1: CLOCK25_PLL File: C:/Github projects/371final_lab6/CLOCK25_PLL.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file clock25_pll/clock25_pll_0002.v
@@ -786,42 +766,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock25
 Warning (10229): Verilog HDL Expression warning at Display.sv(26): truncated literal to match 24 bits File: C:/Github projects/371final_lab6/Display.sv Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file display.sv
     Info (12023): Found entity 1: Display File: C:/Github projects/371final_lab6/Display.sv Line: 6
-    Info (12023): Found entity 2: Display_testbench File: C:/Github projects/371final_lab6/Display.sv Line: 88
+    Info (12023): Found entity 2: Display_testbench File: C:/Github projects/371final_lab6/Display.sv Line: 89
 Info (12021): Found 2 design units, including 2 entities, in source file gamecontrol.sv
     Info (12023): Found entity 1: GameControl File: C:/Github projects/371final_lab6/GameControl.sv Line: 6
-    Info (12023): Found entity 2: GameControl_testbench File: C:/Github projects/371final_lab6/GameControl.sv Line: 98
+    Info (12023): Found entity 2: GameControl_testbench File: C:/Github projects/371final_lab6/GameControl.sv Line: 95
 Info (12021): Found 2 design units, including 2 entities, in source file hexdecdigit.sv
     Info (12023): Found entity 1: HexDecDigit File: C:/Github projects/371final_lab6/HexDecDigit.sv Line: 6
-    Info (12023): Found entity 2: HexDecDigit_testbench File: C:/Github projects/371final_lab6/HexDecDigit.sv Line: 37
+    Info (12023): Found entity 2: HexDecDigit_testbench File: C:/Github projects/371final_lab6/HexDecDigit.sv Line: 38
 Warning (10263): Verilog HDL Event Control warning at n8_driver.v(74): event expression contains "|" or "||" File: C:/Github projects/371final_lab6/n8_driver.v Line: 74
 Info (12021): Found 1 design units, including 1 entities, in source file n8_driver.v
     Info (12023): Found entity 1: n8_driver File: C:/Github projects/371final_lab6/n8_driver.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file n8_to_key.sv
-    Info (12023): Found entity 1: n8_to_key File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 6
-    Info (12023): Found entity 2: n8_to_key_testbench File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 55
+    Info (12023): Found entity 1: n8_to_key File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 9
+    Info (12023): Found entity 2: n8_to_key_testbench File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 58
 Info (12021): Found 2 design units, including 2 entities, in source file win_logic.sv
-    Info (12023): Found entity 1: win_logic File: C:/Github projects/371final_lab6/win_logic.sv Line: 6
-    Info (12023): Found entity 2: win_logic_testbench File: C:/Github projects/371final_lab6/win_logic.sv Line: 38
-Warning (10236): Verilog HDL Implicit Net warning at DE1_SoC.sv(53): created implicit net for "purp_win" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 53
+    Info (12023): Found entity 1: win_logic File: C:/Github projects/371final_lab6/win_logic.sv Line: 8
+    Info (12023): Found entity 2: win_logic_testbench File: C:/Github projects/371final_lab6/win_logic.sv Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at DE1_SoC.sv(59): created implicit net for "purp_win" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 59
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Info (12128): Elaborating entity "n8_driver" for hierarchy "n8_driver:driver" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 37
+Info (12128): Elaborating entity "n8_driver" for hierarchy "n8_driver:driver" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 42
 Warning (10230): Verilog HDL assignment warning at n8_driver.v(103): truncated value with size 32 to match size of target (18) File: C:/Github projects/371final_lab6/n8_driver.v Line: 103
 Warning (10230): Verilog HDL assignment warning at n8_driver.v(110): truncated value with size 32 to match size of target (9) File: C:/Github projects/371final_lab6/n8_driver.v Line: 110
-Info (12128): Elaborating entity "n8_to_key" for hierarchy "n8_to_key:n8_decoder" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 44
-Warning (10230): Verilog HDL assignment warning at n8_to_key.sv(41): truncated value with size 32 to match size of target (4) File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 41
-Warning (10230): Verilog HDL assignment warning at n8_to_key.sv(43): truncated value with size 32 to match size of target (4) File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 43
-Info (12128): Elaborating entity "GameControl" for hierarchy "GameControl:controller" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 47
-Info (12128): Elaborating entity "win_logic" for hierarchy "win_logic:win" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 48
-Info (12128): Elaborating entity "Display" for hierarchy "Display:disp" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 51
-Warning (12125): Using design file generalregister.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
-    Info (12023): Found entity 1: GeneralRegister File: C:/Github projects/371final_lab6/generalregister.sv Line: 8
-    Info (12023): Found entity 2: GeneralRegister_testbench File: C:/Github projects/371final_lab6/generalregister.sv Line: 88
-Info (12128): Elaborating entity "GeneralRegister" for hierarchy "GeneralRegister:purp_wins_count" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 53
-Warning (10230): Verilog HDL assignment warning at generalregister.sv(39): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/generalregister.sv Line: 39
-Warning (10230): Verilog HDL assignment warning at generalregister.sv(43): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/generalregister.sv Line: 43
-Warning (10230): Verilog HDL assignment warning at generalregister.sv(50): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/generalregister.sv Line: 50
-Warning (10230): Verilog HDL assignment warning at generalregister.sv(54): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/generalregister.sv Line: 54
-Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 61
+Info (12128): Elaborating entity "n8_to_key" for hierarchy "n8_to_key:n8_decoder" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at n8_to_key.sv(44): truncated value with size 32 to match size of target (4) File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at n8_to_key.sv(46): truncated value with size 32 to match size of target (4) File: C:/Github projects/371final_lab6/n8_to_key.sv Line: 46
+Info (12128): Elaborating entity "GameControl" for hierarchy "GameControl:controller" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 53
+Info (12128): Elaborating entity "win_logic" for hierarchy "win_logic:win" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 54
+Info (12128): Elaborating entity "GeneralRegister" for hierarchy "GeneralRegister:purp_wins_count" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at GeneralRegister.sv(37): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at GeneralRegister.sv(41): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at GeneralRegister.sv(48): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at GeneralRegister.sv(52): truncated value with size 32 to match size of target (5) File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 52
+Info (12128): Elaborating entity "Display" for hierarchy "Display:disp" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 64
+Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 69
 Info (12128): Elaborating entity "CLOCK25_PLL" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen" File: C:/Github projects/371final_lab6/video_driver.sv Line: 47
 Info (12128): Elaborating entity "CLOCK25_PLL_0002" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst" File: C:/Github projects/371final_lab6/CLOCK25_PLL.v Line: 20
 Info (12128): Elaborating entity "altera_pll" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: C:/Github projects/371final_lab6/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
@@ -889,23 +866,23 @@ Info (12133): Instantiated megafunction "video_driver:v1|CLOCK25_PLL:c25_gen|CLO
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "video_driver:v1|altera_up_avalon_video_vga_timing:video" File: C:/Github projects/371final_lab6/video_driver.sv Line: 147
-Info (12128): Elaborating entity "HexDecDigit" for hierarchy "HexDecDigit:selecter" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 63
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "HexDecDigit" for hierarchy "HexDecDigit:selecter" File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 72
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Github projects/371final_lab6/output_files/DE1_SoC.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 479 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 417 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 83 output pins
-    Info (21061): Implemented 379 logic cells
+    Info (21061): Implemented 317 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4831 megabytes
-    Info: Processing ended: Mon Jun 07 13:49:44 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:34
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Mon Jun 07 23:08:20 2021
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:54
 
 
 +------------------------------------------+

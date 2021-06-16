@@ -1,5 +1,6 @@
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10268): Verilog HDL information at GeneralRegister.sv(71): always construct contains both blocking and non-blocking assignments File: C:/Github projects/371final_lab6/GeneralRegister.sv Line: 71
 Warning (10273): Verilog HDL warning at HexDecDigit.sv(32): extended using "x" or "z" File: C:/Github projects/371final_lab6/HexDecDigit.sv Line: 32
-Warning (10030): Net "purp_win" at DE1_SoC.sv(53) has no driver or initial value, using a default initial value '0' File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 53
-Warning (10034): Output port "LEDR[9..3]" at DE1_SoC.sv(4) has no driver File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 4
-Warning (10268): Verilog HDL information at generalregister.sv(73): always construct contains both blocking and non-blocking assignments File: C:/Github projects/371final_lab6/generalregister.sv Line: 73
+Warning (10030): Net "purp_win" at DE1_SoC.sv(59) has no driver or initial value, using a default initial value '0' File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 59
+Warning (10034): Output port "LEDR[7..3]" at DE1_SoC.sv(10) has no driver File: C:/Github projects/371final_lab6/DE1_SoC.sv Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
